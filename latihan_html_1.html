@@ -1,93 +1,248 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan HTML</title>
+    <title>Tugas Mandiri HTML Lengkap - Riqqz</title>
+
+    <style>
+      :root {
+        --primary: #2563eb;
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #334155;
+        --accent: #3b82f6;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 40px 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 30px;
+        background: linear-gradient(135deg, var(--primary), #1d4ed8);
+        color: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .section-card {
+        background: var(--card);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+
+      h2 {
+        color: var(--primary);
+        border-left: 5px solid var(--accent);
+        padding-left: 15px;
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      /* Styling Tabel */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+      th,
+      td {
+        padding: 12px;
+        border: 1px solid #e2e8f0;
+        text-align: left;
+      }
+      th {
+        background: #f8fafc;
+        color: var(--primary);
+      }
+
+      /* Styling Media Bab 8 */
+      .media-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 15px;
+      }
+      img,
+      video {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      audio {
+        width: 100%;
+      }
+
+      /* Styling Form */
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      blockquote {
+        border-left: 5px solid var(--accent);
+        background: #f1f5f9;
+        padding: 20px;
+        margin: 0;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+      }
+    </style>
   </head>
   <body>
-    <h1>Ini adalah heading 1</h1>
-    <h2>Ini adalah heading 2</h2>
-    <h3>Ini adalah heading 3</h3>
-    <h4>Ini adalah heading 4</h4>
-    <h5>Ini adalah heading 5</h5>
-    <h6>Ini adalah heading 6</h6>
+    <div class="container">
+      <header>
+        <h1>Modul Desain Web: HTML</h1>
+        <p></p>
+      </header>
 
-    <p>
-      Nama saya adalah ucup surucup teman dari otong surotong. Saya sekolah di
-      <b>sekolah IT</b> terbaik se-indonesia. Jangan tanya saya, karena saya
-      terlalu jago.
-    </p>
+      <div class="section-card">
+        <h2>01. Dasar & Formatting</h2>
+        <p>
+          Nama saya adalah ucup surucup teman dari otong surotong. saya sekolah
+          di <b>SMK IT</b> terbaik se-Indonesia. Jangan tanya saya, karena saya
+          terlalu jago.
+        </p>
+        <p>
+          Rumus Relativitas: E = mc<sup>2</sup>. Gas CO<sub>2</sub> berbahaya
+          bagi lingkungan.
+        </p>
+        <p>
+          <mark>Catatan:</mark> <del>HTML itu susah</del>
+          <ins>HTML itu menyenangkan!</ins>
+        </p>
+      </div>
 
-    <p>
-      Saya adalah otong surotong teman dari ucup surucup. Saya juga jagoan, jadi
-      jangan tanya saya. Tanya saja sama <i>pak ustadz anda.</i>
-    </p>
+      <div class="section-card">
+        <h2>02. List (Daftar)</h2>
+        <ul>
+          <li>Belajar Tag Dasar</li>
+          <li>Belajar Tag Media</li>
+        </ul>
+        <ol>
+          <li>Buka VS Code</li>
+          <li>Tulis Kode</li>
+          <li>Buka di Browser</li>
+        </ol>
+      </div>
 
-    <p>
-      Menurut Einstein rumus relativitas energi adalah E=MC<sup>2</sup>. Lalu,
-      carbon dioksida adalah CO<sub>2</sub>.
-    </p>
+      <div class="section-card">
+        <h2>03. Navigasi Link</h2>
+        <p>
+          Kunjungi <a href="https://google.com" target="_blank">Google</a> atau
+          kirim <a href="mailto:riqqz@stikom.ac.id">Email ke saya</a>.
+        </p>
+      </div>
 
-    <p>
-      Ucup dan Otong adalah sahabat sejati sejak SD. Sejak SD, mereka sudah
-      berteman dan tinggal di desa yang sama. Mereka sedang bermain bola
-      bersama-sama.
-    </p>
+      <div class="section-card">
+        <h2>04. Tabel Data</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Materi</th>
+              <th>Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bab 2-7</td>
+              <td>Selesai</td>
+            </tr>
+            <tr>
+              <td>Bab 8-10</td>
+              <td>Selesai</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <p><b>Ucup</b> adalah anak yang cerdas</p>
+      <div class="section-card">
+        <h2>05. Form Input</h2>
+        <form>
+          <label>Nama Lengkap:</label>
+          <input type="text" placeholder="Masukkan nama..." />
+          <label>Email Kampus:</label>
+          <input type="email" placeholder="nim@stikom.ac.id" />
+          <button type="button">Simpan Data</button>
+        </form>
+      </div>
 
-    <p><b>Otong</b> adalah anak yang periang.</p>
+      <div class="section-card">
+        <h2>06. Konten Multimedia</h2>
+        <div class="media-container">
+          <div>
+            <p><strong>Gambar:</strong></p>
+            <img
+              src="https://imgs.search.brave.com/dlVE9yGniSqVmMFy-avPQf-1IX7jzId6D4t_7EkhH28/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hd3Np/bWFnZXMuZGV0aWsu/bmV0LmlkL2NvbW11/bml0eS9tZWRpYS92/aXN1YWwvMjAyNC8w/My8wOC9pbHVzaS1v/cHRpay1icmlnaHRz/aWRlLTYuanBlZz93/PTc1MCZxPTkw"
+              alt="Contoh Gambar"
+            />
+          </div>
 
-    <hr />
+          <div>
+            <p><strong>Audio:</strong></p>
+            <audio controls>
+              <source src="fahhhhhhhhhhhhhh.mp3" type="audio/mpeg" />
+              Browser kamu tidak mendukung tag audio.
+            </audio>
+          </div>
 
-    <p>
-      <strong>Perhatian:</strong> Jangan buang sampah sembarangan di lingkungan
-      sekitar kita. Mari kita jaga kebersihan bersama-sama!
-    </p>
+          <div>
+            <p><strong>Video:</strong></p>
+            <video controls width="100%">
+              <source src="Sony.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung tag video.
+            </video>
+          </div>
+        </div>
+      </div>
 
-    <blockquote>Mensana incorporesano, Men ke sana, Women ke sono.</blockquote>
-
-    <p>
-      Ini adalah teman <em>nongkrong</em>, bukan tempat untuk
-      <strong>berantem</strong>. Bosku bilang, <q>Selalu jaga kesehatan</q>.
-    </p>
-
-    <hr />
-
-    <h4>Singkatan</h4>
-
-    <p>Ucup sekolah di <abbr title="Sekolah Dasar">SD</abbr> Pucuk Harum</p>
-    <p>
-      Kemudian ucup bekerja di
-      <acronym title="National Aeronautics and Space Administration"
-        >NASA</acronym
-      >
-      cabang singojuruh.
-    </p>
-
-    <p>
-      Ucup adalah seorang <del>jagoan</del> <ins>ksatria</ins> web programing.
-    </p>
-
-    <hr />
-
-    <h4>Ordered & Unordered List</h4>
-
-    <ol>
-      <li>Pasta 1 bungkus</li>
-      <li>Daging cincang 1 ton</li>
-      <li>Tomat 2 kg</li>
-      <li>Keju 500 gram</li>
-      <li>Minyak zaitun 1 liter</li>
-      <li>Bawang merah 5 siung</li>
-      <li>Bawang putih 3 siung</li>
-      <li>Bumbu dapur</li>
-      <ul>
-        <li>Garam secukupnya</li>
-        <li>Merica secukupnya</li>
-        <li>Gula secukupnya</li>
-      </ul>
-    </ol>
+      <div class="section-card">
+        <h2>07. Tag Khusus & Advanced</h2>
+        <details>
+          <summary>Klik untuk kutipan hari ini</summary>
+          <blockquote>
+            "Mensana incorporesano, di dalam tubuh yang sehat terdapat jiwa yang
+            kuat."
+          </blockquote>
+        </details>
+        <p>
+          Status: <abbr title="HyperText Markup Language">HTML</abbr> Expert.
+        </p>
+        <p>
+          Waktu Pengerjaan: <time datetime="2026-03-30">30 Maret 2026</time>
+        </p>
+      </div>
+    </div>
   </body>
 </html>
