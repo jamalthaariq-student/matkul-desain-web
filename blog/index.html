@@ -5,105 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Riqqz</title>
   </head>
-  <body
-    style="
-      font-family: sans-serif;
-      line-height: 1.6;
-      color: #333;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    "
-  >
-    <header
-      style="
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 0;
-        border-bottom: 2px solid #eee;
-      "
-    >
+  <body>
+    <header>
       <div class="logo">
-        <h1 style="margin: 0">
-          <img
-            src="logo.png"
-            alt="Logo Riqqz"
-            style="height: 60px; width: auto; object-fit: contain"
-          />
+        <h1>
+          <img src="logo.png" alt="Logo Riqqz" width="100px" />
         </h1>
       </div>
 
       <nav>
-        <ul
-          style="
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            margin: 0;
-            padding:;
-            align-items: center;
-            font-weight: bold;
-            padding-right: 400px;
-          "
-        >
+        <ul style="display: flex;">
           <li>
-            <a href="#" style="text-decoration: none; color: black">Home</a>
+            <a href="#">Home</a>
           </li>
-          <li style="position: relative">
-            <details style="cursor: pointer">
-              <summary style="list-style: none; outline: none">
-                Kategori ▼
-              </summary>
-              <ul
-                style="
-                  position: absolute;
-                  background: white;
-                  border: 1px solid #ccc;
-                  padding: 10px;
-                  margin-top: 10px;
-                  min-width: 150px;
-                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                  z-index: 100;
-                  font-weight: normal;
-                "
-              >
-                <li style="padding: 5px 0">
-                  <a href="#" style="text-decoration: none; color: #444"
-                    >Linux Fedora</a
-                  >
+          <li>
+            <details>
+              <summary>Kategori</summary>
+              <ul>
+                <li>
+                  <a href="#">Linux Fedora</a>
                 </li>
-                <li style="padding: 5px 0">
-                  <a href="#" style="text-decoration: none; color: #444"
-                    >Tutorial CLI</a
-                  >
+                <li>
+                  <a href="#">Tutorial CLI</a>
                 </li>
-                <li style="padding: 5px 0">
-                  <a href="#" style="text-decoration: none; color: #444"
-                    >Hardware Tips</a
-                  >
+                <li>
+                  <a href="#">Hardware Tips</a>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a href="#" style="text-decoration: none; color: black"
-              >Tentang Kami</a
-            >
+            <a href="#">Tentang Kami</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <div style="display: flex; gap: 40px; margin-top: 30px">
-      <main style="flex: 2">
-        <article style="margin-bottom: 40px">
-          <h2 style="margin-bottom: 5px">
-            Berkenalan dengan Fedora Silverblue
-          </h2>
-          <p style="color: #666; font-size: 0.9em">
-            Dipublikasikan pada: 16 Januari 2023
-          </p>
+    <div>
+      <main>
+        <article>
+          <h2>Berkenalan dengan Fedora Silverblue</h2>
+          <p>Dipublikasikan pada: 16 Januari 2023</p>
           <p>
             Sebagai mahasiswa IT, saya tahu betul betapa pentingnya tools dan
             libraries dalam menyelesaikan tugas dan proyek kuliah saya. Demi
@@ -125,13 +67,9 @@
           </p>
         </article>
 
-        <article style="margin-bottom: 40px">
-          <h2 style="margin-bottom: 5px">
-            10 distro Linux terbaik untuk pemula maupun profesional 2026
-          </h2>
-          <p style="color: #666; font-size: 0.9em">
-            Dipublikasikan pada: 14 Januari 2026
-          </p>
+        <article>
+          <h2>10 distro Linux terbaik untuk pemula maupun profesional 2026</h2>
+          <p>Dipublikasikan pada: 14 Januari 2026</p>
           <p>
             Distribusi Linux, atau distro, adalah sistem operasi yang
             dikembangkan dari kernel Linux. Setiap distribusi memiliki
@@ -154,11 +92,9 @@
           </p>
         </article>
 
-        <article style="margin-bottom: 40px">
+        <article>
           <h2>Cara Lengkap & Mudah Install Linux Ubuntu, Mint untuk Pemula</h2>
-          <p style="color: #666; font-size: 0.9em">
-            Dipublikasikan pada: 31 Desember 2020
-          </p>
+          <p>Dipublikasikan pada: 31 Desember 2020</p>
           <p>
             Bagi para pecinta sumber terbuka alias Open Source pasti sudah tak
             asing dengan istilah di atas. Ya, Linux dengan logo penguin yang
@@ -175,7 +111,6 @@
             yang mengizinkan siapapun menerima, mengubah, dan mendistribusikan
             programnya itu. Maka tak heran perkembangan Linux begitu cepat
             hingga detik ini.
-
             <u
               ><a href="https://bixbux.com/cara-install-linux/" target="_blank"
                 >Baca selengkapnya</a
@@ -185,178 +120,50 @@
         </article>
       </main>
 
-      <aside style="flex: 1; border-left: 1px solid #eee; padding-left: 20px">
-        <h3 style="border-bottom: 2px solid #333; padding-bottom: 10px">
-          Artikel Populer
-        </h3>
-        <ul style="list-style: none; padding: 0">
-          <li
-            style="
-              display: flex;
-              gap: 15px;
-              margin-bottom: 20px;
-              align-items: flex-start;
-            "
-          >
-            <img
-              src="1.webp"
-              alt="Thumbnail"
-              style="
-                width: 80px;
-                height: 55px;
-                object-fit: cover;
-                border-radius: 5px;
-              "
-            />
-            <a
-              href="https://csirt.teknokrat.ac.id/..."
-              style="
-                text-decoration: none;
-                color: #333;
-                font-size: 14px;
-                font-weight: bold;
-                line-height: 1.2;
-              "
-              >Selamat Tinggal Windows: Panduan Pindah ke Linux Tanpa Ribet</a
-            >
+      <aside>
+        <h3>Artikel Populer</h3>
+        <ul>
+          <li>
+            <img src="1.webp" alt="Thumbnail" />
+            <a href="https://csirt.teknokrat.ac.id/...">
+              Selamat Tinggal Windows: Panduan Pindah ke Linux Tanpa Ribet
+            </a>
           </li>
 
-          <li
-            style="
-              display: flex;
-              gap: 15px;
-              margin-bottom: 20px;
-              align-items: flex-start;
-            "
-          >
-            <img
-              src="2.webp"
-              alt="Thumbnail"
-              style="
-                width: 80px;
-                height: 55px;
-                object-fit: cover;
-                border-radius: 5px;
-              "
-            />
-            <a
-              href="https://idcloudhost.com/..."
-              style="
-                text-decoration: none;
-                color: #333;
-                font-size: 14px;
-                font-weight: bold;
-                line-height: 1.2;
-              "
-              >Terminal Linux Tidak Menakutkan: 10 Perintah Dasar</a
-            >
+          <li>
+            <img src="2.webp" alt="Thumbnail" />
+            <a href="https://idcloudhost.com/...">
+              Terminal Linux Tidak Menakutkan: 10 Perintah Dasar
+            </a>
           </li>
 
-          <li
-            style="
-              display: flex;
-              gap: 15px;
-              margin-bottom: 20px;
-              align-items: flex-start;
-            "
-          >
-            <img
-              src="3.webp"
-              alt="Thumbnail"
-              style="
-                width: 80px;
-                height: 55px;
-                object-fit: cover;
-                border-radius: 5px;
-              "
-            />
-            <a
-              href="https://www.belajarlinux.org/..."
-              style="
-                text-decoration: none;
-                color: #333;
-                font-size: 14px;
-                font-weight: bold;
-                line-height: 1.2;
-              "
-              >Cara Install Dual-Boot Linux dan Windows untuk Pemula</a
-            >
+          <li>
+            <img src="3.webp" alt="Thumbnail" />
+            <a href="https://www.belajarlinux.org/...">
+              Cara Install Dual-Boot Linux dan Windows untuk Pemula
+            </a>
           </li>
 
-          <li
-            style="
-              display: flex;
-              gap: 15px;
-              margin-bottom: 20px;
-              align-items: flex-start;
-            "
-          >
-            <img
-              src="4.webp"
-              alt="Thumbnail"
-              style="
-                width: 80px;
-                height: 55px;
-                object-fit: cover;
-                border-radius: 5px;
-              "
-            />
+          <li>
+            <img src="4.webp" alt="Thumbnail" />
             <a
               href="http://cara-ubuntu.blogspot.com/2015/05/cara-mempercepat-kinerja-ubuntu.html"
-              style="
-                text-decoration: none;
-                color: #333;
-                font-size: 14px;
-                font-weight: bold;
-                line-height: 1.2;
-              "
-              >Cara Mempercepat Performa Ubuntu di Laptop Jadul</a
             >
+              Cara Mempercepat Performa Ubuntu di Laptop Jadul
+            </a>
           </li>
 
-          <li
-            style="
-              display: flex;
-              gap: 15px;
-              margin-bottom: 20px;
-              align-items: flex-start;
-            "
-          >
-            <img
-              src="5.webp"
-              alt="Thumbnail"
-              style="
-                width: 80px;
-                height: 55px;
-                object-fit: cover;
-                border-radius: 5px;
-              "
-            />
-            <a
-              href="https://gcore.com/learning/how-to-install-proton-on-linux"
-              style="
-                text-decoration: none;
-                color: #333;
-                font-size: 14px;
-                font-weight: bold;
-                line-height: 1.2;
-              "
-              >Panduan Gaming di Linux: Cara Setting Steam dan Proton</a
-            >
+          <li>
+            <img src="5.webp" alt="Thumbnail" />
+            <a href="https://gcore.com/learning/how-to-install-proton-on-linux">
+              Panduan Gaming di Linux: Cara Setting Steam dan Proton
+            </a>
           </li>
         </ul>
       </aside>
     </div>
 
-    <footer
-      style="
-        margin-top: 50px;
-        padding: 20px 0;
-        border-top: 1px solid #eee;
-        text-align: center;
-        color: #888;
-      "
-    >
+    <footer>
       <p>&copy; 2026 Riqqz Blog. All rights reserved.</p>
     </footer>
   </body>
