@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 8 Formulir</title>
+  </head>
+  <body>
+    <header>
+      <h2 style="text-align: center">Formulir Data Pribadi</h2>
+    </header>
+    <section>
+      <fieldset style="border: 1px solid black; padding: 20px; width: 300px">
+        <legend>Data Pribadi</legend>
+        <label for="name" style="display: block; margin-bottom: 5px"
+          >Nama:</label
+        >
+        <input
+          type="name"
+          id="name"
+          name="name"
+          placeholder="Masukkan nama lengkap Anda"
+          style="width: 250px; padding: 8px; margin-bottom: 10px"
+        />
+        <br />
+        <label for="email" style="display: block; margin-bottom: 5px"
+          >Email:</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="contoh123@gmail.com"
+          style="width: 250px; padding: 8px; margin-bottom: 10px"
+        />
+        <br />
+        <label for="telp" style="display: block; margin-bottom: 5px"
+          >No. Telepon:</label
+        >
+        <input
+          type="tel"
+          id="telp"
+          name="telp"
+          placeholder="08xxxxxxxxxx"
+          style="width: 250px; padding: 8px; margin-bottom: 10px"
+        />
+        <br />
+        <label for="alamat" style="display: block; margin-bottom: 5px"
+          >Alamat:</label
+        >
+        <input
+          type="text"
+          id="alamat"
+          name="alamat"
+          placeholder="Masukkan alamat lengkap Anda"
+          style="width: 250px; padding: 8px; margin-bottom: 10px"
+        />
+        <br />
+        <label for="kota" style="display: block; margin-bottom: 5px"
+          >Tempat Lahir:</label
+        >
+        <input
+          type="text"
+          id="kota"
+          name="kota"
+          placeholder="Masukkan Tempat Lahir anda"
+          style="width: 250px; padding: 8px; margin-bottom: 10px"
+        />
+        <br />
+        <label for="tanggal" style="display: block; margin-bottom: 5px"
+          >Tanggal Lahir:</label
+        >
+        <input
+          type="date"
+          id="tanggal"
+          name="tanggal"
+          style="width: 250px; padding: 8px; margin-bottom: 10px"
+        />
+        <br />
+        <label for="kelamin" style="display: block; margin-bottom: 5px"
+          >Jenis Kelamin:</label
+        >
+        <input type="radio" id="laki" name="kelamin" value="Laki-laki" />
+        <label for="laki" style="display: inline; margin-right: 10px"
+          >Laki-laki</label
+        >
+        <input type="radio" id="perempuan" name="kelamin" value="Perempuan" />
+        <label for="perempuan" style="display: inline; margin-right: 10px"
+          >Perempuan</label
+        >
+      </fieldset>
+    </section>
+    <br />
+    <section>
+      <fieldset style="border: 1px solid black; padding: 20px; width: 300px">
+        <legend>Data Akademik</legend>
+        <label for="study" style="display: block; margin-bottom: 5px"
+          >Program Studi:</label
+        >
+        <select
+          id="study"
+          name="study"
+          style="width: 250px; padding: 8px; margin-bottom: 10px"
+        >
+          <option value="" disabled selected>Pilih Program Studi</option>
+          <option value="Teknik Informatika">S1 Teknik Informatika</option>
+          <option value="Management Informatika">
+            D3 Management Informatika
+          </option>
+        </select>
+        <br /><br />
+        <label for="sekolah" style="display: block; margin-bottom: 5px"
+          >Asal Sekolah:</label
+        >
+        <input type="radio" id="sekolah" name="sekolah" value="SMA" />
+        <label for="sekolah" style="display: inline; margin-right: 5px"
+          >SMA</label
+        >
+        <input type="radio" id="sekolah" name="sekolah" value="SMk" />
+        <label for="sekolah" style="display: inline; margin-right: 5px"
+          >SMK</label
+        >
+        <input type="radio" id="sekolah" name="sekolah" value="MA" />
+        <label for="sekolah" style="display: inline; margin-right: 5px"
+          >MA</label
+        >
+        <br /><br />
+        <label for="nama sekolah" style="display: block; margin-bottom: 5px"
+          >Nama Sekolah:</label
+        >
+        <input
+          type="text"
+          id="nama-sekolah"
+          name="nama-sekolah"
+          value=""
+          style="width: 250px; padding: 8px; margin-bottom: 5px"
+        />
+        <br /><br />
+        <label for="foto" style="display: block; margin-bottom: 5px"
+          >Upload Foto:</label
+        >
+        <input type="file" id="foto" name="foto" />
+        <br /><br />
+        <label for="pesan" style="display: block; margin-bottom: 5px"
+          >Pesan:</label
+        >
+        <textarea
+          name="pesan"
+          id="pesan"
+          cols="30"
+          rows="7"
+          placeholder="Ketikkan pesan yang ingin disampaikan"
+        ></textarea>
+        <br /><br />
+      </fieldset>
+      <input type="submit" value="Daftar" style="margin: 5px 80px" />
+      <input type="reset" value="Reset" style="margin: 5px 2px" />
+    </section>
+  </body>
+</html>

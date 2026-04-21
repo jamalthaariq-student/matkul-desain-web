@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <form autocomplete="on" action="proses.php" method="get">
+        <label for="name">Name:</label>
+        <input type="text" placeholder="namamu cok" name="name" />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+        <br />
+        <input type="submit" value="Submit" />
+        <br />
+        <input type="radio" />
+        <label for="pilihan1">A</label>
+        <br />
+        <input type="checkbox" />
+        <label for="pilihan2">B</label>
+        <br />
+        <input type="button" value="tekan" />
+        <br />
+        <label for="kota">Kota:</label>
+        <select name="kota" id="kota">
+          <option value="jakarta">Jakarta</option>
+          <option value="surabaya">Surabaya</option>
+          <option value="bandung">Bandung</option>
+        </select>
+        <br />
+        <textarea
+          name="pesan"
+          id="pesan"
+          cols="30"
+          rows="10"
+          placeholder="Masukkan pesan Anda di sini..."
+        >
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi earum quisquam aspernatur doloremque tenetur tempore distinctio id, magnam sunt ipsum eligendi laudantium reiciendis. Ad quia possimus, dignissimos aut beatae minus!</textarea
+        >
+        <br />
+        <button type="button" value="Tekan saya" onclick="alert('Hallo cuy')">
+          Tekan saya
+        </button>
+        <br /><br />
+      </form>
+      <form action="/kirim.js">
+        <fieldset>
+          <legend>Data diri:</legend>
+          <label for="fname">Nama depan:</label>
+          <input type="text" id="fname" name="fname" />
+          <br /><br />
+          <label for="lname">Nama belakang:</label>
+          <input type="text" id="lname" name="lname" />
+          <br /><br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+        </fieldset>
+        <input type="submit" value="Kirim" />
+      </form>
+      <input list="browser" name="browser" />
+      <datalist id="browser">
+        <option value="Chrome"></option>
+        <option value="Brave"></option>
+        <option value="Mozila firefox"></option>
+        <option value="Opera"></option>
+        <option value="Microsoft Edge"></option>
+        <option value="Safari"></option>
+      </datalist>
+      <form oninput="x.value = parseInt(a.value) + parseInt(b.value)">
+        <input type="range" id="a" value="50" /> +
+        <input type="number" id="b" value="25" /> =
+        <output name="x" for="a b"></output>
+      </form>
+      <br/>
+      <input type="date" id="tanggal" name="tanggal" />
+    </section>
+  </body>
+</html>
