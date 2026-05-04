@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Galeri - Toko Prima</title>
+    </head>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            padding: 0px 10px;
+            display: flex;
+            background-color: #eceaea;
+        }
+        nav {
+            margin-left: 100px;
+            margin-top: 15px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 70px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        nav ul li a:hover {
+            color: blue;
+        }
+        main {
+            margin-top: 20px;
+        }
+        .gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        figure {
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+            text-align: center;
+            margin-left: 25px;
+        }
+        figure img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+        figure figcaption {
+            margin-top: 8px;
+            font-size: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 500px;
+            padding: 10px;
+            background-color: #eceaea;
+        }
+    </style>
+    <body>
+        <header>
+            <h1>Toko Prima</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="galery.html">Galeri</a></li>
+                    <li><a href="form.html">Pesan</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <p>Sedia:</p>
+
+            <section class="gallery">
+                <figure>
+                    <img
+                        src="https://imgs.search.brave.com/Q8hMPp5g1JU8t8KqKF7-Sd-q1anVBHxKKkNG46PEJFg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTF3cy5pbmRvdHJh/ZGluZy5jb20vczMv/cHJvZHVjdGltYWdl/cy93ZWJwL2NvMjU4/NjI2L3AxMzkyMDcw/L3czMDAtaDMwMC8y/ODRlZWIxZi03YmE3/LTQ0OWYtOWQwYS02/NmMzZmU0MzZhYmEu/anBn"
+                        alt="tepung terigu"
+                    />
+                    <figcaption>Tepung Segitiga Biru</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="https://imgs.search.brave.com/J4Kt6qxtpWRlf_bEyFXtycQfzvUU8XuZAgSqFzWA4dg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jbmMt/bWFnYXppbmUub3Jh/bWlsYW5kLmNvbS9w/YXJlbnRpbmcvaW1h/Z2VzL0hhd2FpX1Rl/cHVuZ19NYWl6ZW5h/LndpZHRoLTgwMC5m/b3JtYXQtd2VicC53/ZWJw"
+                        alt="tepung maizena"
+                    />
+                    <figcaption>Tepung Maizena Hawai</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="https://imgs.search.brave.com/MN_6hED_EoLDnVFc2zKcRa9hXY81tmhcRsPuITv6VnQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cG5ncGxheS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzEvQnV0/dGVyLVBORy1CYWNr/Z3JvdW5kLUZpbGUu/cG5n"
+                        alt="mentega"
+                    />
+                    <figcaption>Mentega</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="https://imgs.search.brave.com/OnUKsL7EAIZ-6u02zHa9LlnMJcqClXxHhRJDbt3nhPs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudG9rb3BlZGlh/Lm5ldC9pbWcvY2Fj/aGUvMjAwLXNxdWFy/ZS9WcWJjbU0vMjAy/MS83LzEzLzMyZTlh/MmIzLWMyM2EtNDM2/My1iYThiLWM4OTBm/ZTJmZWY0OS5qcGc"
+                        alt="pewarna"
+                    />
+                    <figcaption>Pewarna Makanan</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="https://imgs.search.brave.com/uA4eC0y0OGII81L2bMS_tGMyx9l-rjo4fFo31sgxrGo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzg3LzM4/LzAyLzg3MzgwMjc0/YTNjMWIwNjBmNmRl/ZWY5NWZkZDZmZDc1/LmpwZw"
+                        alt="telur"
+                    />
+                    <figcaption>Telur</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="https://imgs.search.brave.com/RgZS5ElyGKXxw5W5iWBE-W_nyBws94iDCScFaGpg_Ao/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI5/OTYxMTE0Ny9pZC92/ZWt0b3IvaWx1c3Ry/YXNpLXJlYWxpc3Rp/cy1jb2tlbGF0LWJh/dGFuZ2FuLWNva2xh/dC1kZW5nYW4taXJp/c2FuLXBlcnNlZ2kt/cGFuamFuZy5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9czB5/NVF2ZTFpWDlRWHFD/MWlpOU9ad0pYNEZo/SGY5QXYzUjZuSTk3/R0d2bz0"
+                        alt="cokelat"
+                    />
+                    <figcaption>Cokelat</figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Toko Prima. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda - Toko Prima</title>
+  </head>
+  <style>
+    body {
+      font-family: arial, sans-serif;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      padding: 0px 10px;
+      display: flex;
+      background-color: #eceaea;
+    }
+    nav {
+      margin-left: 100px;
+      margin-top: 15px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 70px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    nav ul li a:hover {
+      color: blue;
+    }
+    main {
+      margin-top: 20px;
+    }
+    main section img {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+      object-fit: cover;
+    }
+    .article {
+      background-color: #eceaea;
+      padding: 15px;
+      margin-top: 20px;
+      display: flex;
+    }
+    .article h2 {
+      margin-top: 65px;
+    }
+    .article ul {
+      margin-left: 20px;
+    }
+    .article ul li {
+      background-color: white;
+      color: black;
+      padding: 8px 20px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      display: table;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th,
+    table td {
+      padding: 10px;
+      text-align: left;
+    }
+    table thead {
+      background-color: #eceaea;
+    }
+    footer {
+      text-align: center;
+      margin-top: 300px;
+      padding: 10px;
+      background-color: #eceaea;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>Toko Prima</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="galery.html">Galeri</a></li>
+          <li><a href="form.html">Pesan</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Selamat Datang di Toko Prima</h2>
+        <p>
+          Kami menyediakan berbagai bahan kue premium, mulai dari tepung khusus,
+          cokelat impor, hingga hiasan kue yang cantik untuk kebutuhan hobi
+          maupun bisnis bakery Anda.
+        </p>
+        <img
+          src="https://imgs.search.brave.com/t28IOXHKnJOfFUmYpAsclKSAznv09S4HrvtFtqjRvBo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL3Av/QUYxUWlwUGk2cW80/M1V6aks0TmlMMkFX/aWJOQ3JEWVdFNU5x/NHo3SzlXSDE9czE2/MDAtaDM4MA"
+          alt="Gambar Toko Prima"
+        />
+      </section>
+
+      <section class="article">
+        <h2>Layanan Kami</h2>
+        <ul>
+          <li>Menyediakan bahan kue berkualitas tinggi</li>
+          <li>Aneka pewarna dan essence makanan food grade</li>
+          <li>Layanan pesan antar khusus area kota</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Jadwal Operasional Toko</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Hari</th>
+              <th>Jam Operasional</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Senin - Jumat</td>
+              <td>08:00 - 20:00</td>
+            </tr>
+            <tr>
+              <td>Sabtu</td>
+              <td>09:00 - 21:00</td>
+            </tr>
+            <tr>
+              <td>Minggu</td>
+              <td>10:00 - 22:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Toko Prima. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
