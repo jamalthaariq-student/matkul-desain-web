@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn {
+            margin: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 200px;
+            height: 50px;
+            background-color: transparent;
+            color: black;
+            padding: 10px 26px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease,
+                        transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            color: white;
+            background-color: #0D47A1;
+            transform: translateY(-5px);
+            box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn:active {
+            transform: translateY(0);
+             box-shadow: none;
+        }
+
+        .card {
+            margin: 25px;
+            cursor: pointer;
+            text-align: center;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease,
+                        border-color 0.3s ease,
+                        background 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.02) ;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            border-color: #0D47A1;
+            background: #8db2e8;
+        }
+        .card:active {
+            transform: translateY(0) scale(1);
+            box-shadow: none;
+            border-color: white;
+            background: white;
+        }
+
+        .box {
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            transition: transform 0.3s ease;
+            border-radius: 500px 5px 500px 5px;
+        }
+        .box:active {
+            transform: rotate(1800deg);
+        }
+        .spin {
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            transition: transform 0.3s ease;
+            border-radius: 5px;
+        }
+        .spin:hover {
+            transform: rotate(0.25turn);
+        }
+
+        .shape {
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            transition: transform 0.3s ease;
+            border-radius: 5px;
+        }
+        .shape:hover {
+            transform: skew(15deg, 10deg);
+        }
+
+        .door {
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            transition: transform 0.3s ease;
+            border-radius: 5px;
+            transform-origin: left center;
+        }
+        .door:hover {
+            transform: rotateY(80deg);
+        }
+
+        .awal{
+            border-radius: 50px;
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            animation: move 2s infinite alternate ease-in-out;
+        }
+        @keyframes move {
+            0% {
+                transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(-200px);
+            }
+        }
+
+        .bounce {
+            border-radius: 50px;
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            animation: bounce 1s ease-in-out 0s infinite alternate forwards running;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-50px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-25px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .slide {
+            border-radius: 5px;
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            animation: slide-in 0.5s ease forwards;
+        }
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .pulse {
+            border-radius: 50px;
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(255, 87, 34, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 10px rgba(255, 87, 34, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(255, 87, 34, 0);
+            }
+
+        }
+        .spiner {
+            border-radius: 100px;
+            border: 4px solid white;
+            border-top-color: #1565c0;
+            margin: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Belajar CSS transition</h2><br>
+
+
+        <div class="btn">Arahkan Cursor Kesini</div>
+
+        <div class="card">
+            <h3>Tekan</h3>
+            <p>Klik untuk melihat efek</p>
+        </div>
+
+        <h2>Belajar CSS transform</h2>
+        <div class="box"></div>
+        <div class="spin"></div>
+        <div class="shape"></div>
+        <div class="door"></div>
+
+        <h2>Belajar animation & @keyframes</h2>
+        <div class="awal"></div>
+        <div class="bounce"></div>
+        <div class="slide"></div>
+        <div class="pulse"></div>
+        <div class="spiner"></div>
+    </div>
+</body>
+</html>

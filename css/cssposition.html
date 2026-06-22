@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .card {
+            background-color: lightblue;
+             width: 300px;
+             height: 300px;
+             border: 3px solid black;
+        }
+        .box-static {
+            gap: 10px;
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+            border: 3px solid black;
+            display: flex;
+        }
+        .item {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 3px solid black;
+            position: static;
+        }
+        .box-relative {
+            gap: 10px;
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+            border: 3px solid black;
+            display: flex;
+        }
+        .item-relative {            
+            position: relative;
+            top: 75px;
+        }
+        .box-fixed {
+            gap: 10px;
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+            border: 3px solid black;
+            display: flex;
+        }
+        .item-fixed {            
+            position: fixed;
+            top: 75px;
+        }
+        .item-fixed2 {
+            position: fixed;
+            top: 150px;
+            left: 142.5px;
+        }
+        .box-absolute {
+            gap: 10px;
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+            border: 3px solid black;
+            display: flex;
+            position: relative;
+        }
+        .item-absolute {            
+            position: absolute;
+            top: 95px;
+        }
+        .box-zindex {
+            gap: 10px;
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+            border: 3px solid black;
+            display: flex;
+            position: sticky;
+        }
+        .item-zindex1 {            
+            position: absolute;
+            left: 10px;
+            top: 65px;
+            z-index: 1;
+        }
+        .item-zindex2 {            
+            position: absolute;
+            left: 20px;
+            top: 85px;
+            z-index: 2;
+        }
+        .item-zindex3 {            
+            position: absolute;
+            left: 30px;
+            top: 105px;
+            z-index: 3;
+        }
+        .item-zindex4 {            
+            position: absolute;
+            left: 40px;
+            top: 125px;
+            z-index: 4;
+        }
+        .float {
+            border: 3px solid black;
+            display: flex;
+            width: 300px;
+            gap: 10px;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            float: left;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Belajar CSS Position</h1>
+    <section class="card">
+        <div class="box-static" title="Static">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+
+    </section><br>
+
+    <section class="card">
+        <div class="box-relative" title="Relative">
+            <div class="item item-relative">1</div>
+            <div class="item">2</div>
+            <div class="item item-relative">3</div>
+            <div class="item">4</div>
+        </div>
+
+    </section><br>
+
+    <section class="card">
+        <div class="box-fixed" title="Fixed">
+            <div class="item item-fixed">1</div>
+            <div class="item">2</div>
+            <div class="item item-fixed2">3</div>
+            <div class="item">4</div>
+        </div>
+
+    </section><br>
+
+    <section class="card">
+        <div class="box-absolute" title="Absolute">
+            <div class="item item-absolute">1</div>
+            <div class="item item-absolute">2</div>
+            <div class="item item-absolute">3</div>
+            <div class="item item-absolute">4</div>
+        </div>
+
+    </section><br>
+
+    <section class="card">
+        <div class="box-zindex" title="Z-Index">
+            <div class="item item-zindex1">1</div>
+            <div class="item item-zindex2">2</div>
+            <div class="item item-zindex3">3</div>
+            <div class="item item-zindex4">4</div>
+        </div>
+
+    </section><br>
+
+    <div class="float">
+        <img src="https://imgs.search.brave.com/2Um4zWvB74FQxJbIJdHSNr5XCA5mpV1avByuM3aMg0o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c3Rpa29tYmFueXV3/YW5naS5hYy5pZC9p/bWFnZXMvaW1hZ2Uu/cG5n" alt="Sample Image">
+        <p>Ini adalah logo STIKOM PGRI Banyuwangi</p>
+    </div>
+</body>
+</html>
