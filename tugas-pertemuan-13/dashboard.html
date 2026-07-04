@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CircleTim - Quantum Matrix</title>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --cyan: #06b6d4;
+        --emerald: #10b981;
+        --dark-bg: #060913;
+        --surface: rgba(17, 24, 39, 0.8);
+        --text-main: #f8fafc;
+        --text-muted: #475569;
+        --border: rgba(6, 182, 212, 0.2);
+        --radius: 16px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Consolas", "Courier New", monospace;
+      }
+      body {
+        background-color: var(--dark-bg);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* --- ADVANCED CSS ANIMATIONS --- */
+      @keyframes radarRotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(0.95);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.05);
+          filter: drop-shadow(0 0 8px var(--cyan));
+        }
+      }
+
+      @keyframes growUp {
+        from {
+          transform: scaleY(0);
+        }
+        to {
+          transform: scaleY(1);
+        }
+      }
+
+      @keyframes glitch {
+        0% {
+          clip-path: inset(40% 0 61% 0);
+          transform: skew(0.3deg);
+        }
+        20% {
+          clip-path: inset(92% 0 1% 0);
+          transform: skew(-0.5deg);
+        }
+        40% {
+          clip-path: inset(15% 0 80% 0);
+          transform: skew(0.5deg);
+        }
+        60% {
+          clip-path: inset(80% 0 5% 0);
+          transform: skew(-0.3deg);
+        }
+        80% {
+          clip-path: inset(3% 0 92% 0);
+          transform: skew(0.8deg);
+        }
+        100% {
+          clip-path: inset(40% 0 61% 0);
+          transform: skew(0deg);
+        }
+      }
+
+      /* --- SCREEN HUD OVERLAY --- */
+      body::before {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(
+          rgba(18, 16, 16, 0) 50%,
+          rgba(0, 0, 0, 0.3) 50%
+        );
+        z-index: 999;
+        background-size: 100% 4px;
+        pointer-events: none;
+      }
+
+      .dashboard-layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        min-height: 100vh;
+      }
+
+      /* --- SIDEBAR --- */
+      .sidebar {
+        background: rgba(10, 15, 30, 0.9);
+        border-right: 1px solid var(--border);
+        padding: 2.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #ffffff;
+        text-shadow: 0 0 10px var(--cyan);
+      }
+      .nav-logo span {
+        color: var(--cyan);
+      }
+
+      .sidebar-menu {
+        list-style: none;
+        margin-top: 3rem;
+      }
+      .sidebar-item a {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.85rem 1rem;
+        border-radius: var(--radius);
+        color: #64748b;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        transition: var(--transition);
+        border: 1px solid transparent;
+      }
+      .sidebar-item.active a,
+      .sidebar-item a:hover {
+        background: rgba(6, 182, 212, 0.05);
+        color: var(--cyan);
+        border-color: var(--border);
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
+      }
+
+      .btn-logout {
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        background: rgba(239, 68, 68, 0.02);
+        border-radius: var(--radius);
+        font-weight: 700;
+        transition: var(--transition);
+      }
+      .btn-logout:hover {
+        background: #ef4444;
+        color: white;
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+      }
+
+      /* --- MAIN CORE --- */
+      .dashboard-main {
+        padding: 3rem;
+        min-width: 0;
+      }
+
+      /* Glitch Effect Header */
+      .glitch-wrapper {
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+      .glitch-text {
+        font-size: 2.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        position: relative;
+        color: white;
+        letter-spacing: 2px;
+      }
+      .glitch-text::before,
+      .glitch-text::after {
+        content: "QUANTUM CORE";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--dark-bg);
+      }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -2px 0 #ff00c1;
+        animation: glitch 1s infinite linear alternate-reverse;
+      }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow:
+          -2px 0 #00fff9,
+          0 2px #00fff9;
+        animation: glitch 1.5s infinite linear alternate;
+      }
+
+      /* --- ANIMATED GRID COMPONENTS --- */
+      .tech-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .animated-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(8px);
+      }
+
+      /* CARD 1: RADAR SCANNER */
+      .radar-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 240px;
+      }
+      .radar-screen {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 2px solid var(--cyan);
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(
+          circle,
+          rgba(6, 182, 212, 0.1) 0%,
+          transparent 80%
+        );
+        margin-bottom: 1rem;
+      }
+      .radar-sweep {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: conic-gradient(
+          from 0deg,
+          transparent 50%,
+          var(--cyan) 100%
+        );
+        border-radius: 50%;
+        transform-origin: center;
+        animation: radarRotate 4s linear infinite;
+        opacity: 0.4;
+      }
+      .radar-dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #ffffff;
+        border-radius: 50%;
+        top: 40%;
+        left: 65%;
+        box-shadow: 0 0 10px #ffffff;
+        animation: pulseGlow 2s infinite;
+      }
+
+      /* CARD 2: CSS LIVE EQUALIZER CHART */
+      .chart-box {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        height: 140px;
+        margin-top: 1.5rem;
+        padding: 0 1rem;
+      }
+      .chart-bar-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 20%;
+      }
+      .chart-bar {
+        width: 100%;
+        background: linear-gradient(to top, var(--primary), var(--cyan));
+        border-radius: 6px 6px 0 0;
+        transform-origin: bottom;
+        animation: growUp 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+
+      /* CARD 3: SYSTEM LOAD PULSE */
+      .pulse-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 140px;
+      }
+      .core-pulse-circle {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: rgba(16, 185, 129, 0.1);
+        border: 2px solid var(--emerald);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--emerald);
+        animation: pulseGlow 2.5s infinite ease-in-out;
+      }
+
+      .card-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: #475569;
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+
+      /* --- SYSTEM MATRIX TABLE --- */
+      .table-container {
+        background: var(--surface);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        overflow-x: auto;
+        backdrop-filter: blur(8px);
+      }
+      .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        min-width: 600px;
+      }
+      .custom-table th,
+      .custom-table td {
+        padding: 1.2rem 1.5rem;
+        border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+      }
+      .custom-table th {
+        background: rgba(6, 182, 212, 0.05);
+        color: var(--cyan);
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+
+      .custom-table tbody tr {
+        transition: var(--transition);
+      }
+      .custom-table tbody tr:hover {
+        background-color: rgba(6, 182, 212, 0.03);
+        transform: scale(1.002);
+      }
+
+      /* Live Data Status Node Animation */
+      .data-node-pulse {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--cyan);
+        box-shadow: 0 0 10px var(--cyan);
+        margin-right: 0.5rem;
+        animation: pulseGlow 1.5s infinite;
+      }
+
+      /* --- MOBILE RESPONSIVE MEDIA QUERIES --- */
+      @media (max-width: 968px) {
+        .dashboard-layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          padding: 1rem 1.5rem;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          flex-direction: row;
+        }
+        .sidebar-menu {
+          display: none;
+        }
+        .dashboard-main {
+          padding: 2rem 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .glitch-text {
+          font-size: 1.6rem;
+        }
+        .tech-visual-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <div class="nav-logo">MATRIX//<span>NODE</span></div>
+        <a href="index.html" class="btn-logout">SHUTDOWN</a>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="glitch-wrapper">
+          <h2 class="glitch-text">QUANTUM CORE</h2>
+          <p style="color: #475569; font-size: 0.9rem; margin-top: 0.2rem">
+            Operator Active: Riqqz // Secure Line
+          </p>
+        </header>
+
+        <div class="tech-visual-grid">
+          <div class="animated-card">
+            <div class="radar-box">
+              <div class="radar-screen">
+                <div class="radar-sweep"></div>
+                <div class="radar-dot"></div>
+              </div>
+              <span class="card-label">Network Sector Scan</span>
+            </div>
+          </div>
+
+          <div class="animated-card">
+            <span class="card-label">Cluster Data Throughput</span>
+            <div class="chart-box">
+              <div class="chart-bar-wrapper">
+                <div class="chart-bar" style="height: 85%; --w: 85%"></div>
+                <span style="font-size: 0.7rem; color: var(--cyan)">N1</span>
+              </div>
+              <div class="chart-bar-wrapper">
+                <div
+                  class="chart-bar"
+                  style="height: 45%; --w: 45%; animation-delay: 0.2s"
+                ></div>
+                <span style="font-size: 0.7rem; color: var(--cyan)">N2</span>
+              </div>
+              <div class="chart-bar-wrapper">
+                <div
+                  class="chart-bar"
+                  style="height: 95%; --w: 95%; animation-delay: 0.4s"
+                ></div>
+                <span style="font-size: 0.7rem; color: var(--cyan)">N3</span>
+              </div>
+              <div class="chart-bar-wrapper">
+                <div
+                  class="chart-bar"
+                  style="height: 60%; --w: 60%; animation-delay: 0.6s"
+                ></div>
+                <span style="font-size: 0.7rem; color: var(--cyan)">N4</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="animated-card"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <div>
+              <span class="card-label">Mainframe Sync Pulse</span>
+            </div>
+            <div class="pulse-display">
+              <div class="core-pulse-circle">99.2%</div>
+            </div>
+            <div
+              style="
+                font-size: 0.75rem;
+                color: var(--emerald);
+                text-align: center;
+              "
+            >
+              Datalink Integrity Locked
+            </div>
+          </div>
+        </div>
+
+        <h3
+          style="
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            color: var(--cyan);
+            letter-spacing: 1px;
+          "
+        >
+          [//] BROADCAST STREAM LOG
+        </h3>
+        <div class="table-container">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Data Pipeline</th>
+                <th>PIC Node</th>
+                <th>Sync Cycle</th>
+                <th>Stream Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>sys_auth_cluster.html</td>
+                <td>Ahmad Fauzi</td>
+                <td>Active Layer</td>
+                <td>
+                  <span
+                    class="data-node-pulse"
+                    style="
+                      background-color: var(--emerald);
+                      box-shadow: 0 0 10px var(--emerald);
+                    "
+                  ></span
+                  >ONLINE
+                </td>
+              </tr>
+              <tr>
+                <td>core_interface_grid.css</td>
+                <td><strong>Riqqz</strong></td>
+                <td>Active Layer</td>
+                <td>
+                  <span
+                    class="data-node-pulse"
+                    style="
+                      background-color: var(--emerald);
+                      box-shadow: 0 0 10px var(--emerald);
+                      animation-delay: 0.4s;
+                    "
+                  ></span
+                  >ONLINE
+                </td>
+              </tr>
+              <tr>
+                <td>db_nosql_validation.js</td>
+                <td>Siti Sarah</td>
+                <td>Staging Phase</td>
+                <td>
+                  <span
+                    class="data-node-pulse"
+                    style="
+                      background-color: #fbbf24;
+                      box-shadow: 0 0 10px #fbbf24;
+                      animation-delay: 0.8s;
+                    "
+                  ></span
+                  >PENDING
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CircleTim - Tech Workspace</title>
+    <style>
+        :root {
+            --primary: #6366f1; /* Neon Indigo */
+            --primary-hover: #4f46e5;
+            --dark-bg: #0f172a; /* Slate 900 (Khas tema tech) */
+            --surface: rgba(30, 41, 59, 0.7); /* Transparan untuk efek glassmorphism */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(226, 232, 240, 0.1);
+            --radius: 16px;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--dark-bg); color: var(--text-main); line-height: 1.6; overflow: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- ANIMASI KEYFRAMES --- */
+        @keyframes bgZoomPan {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.08) translate(-1%, -1%); }
+            100% { transform: scale(1) translate(0, 0); }
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(99, 102, 241, 0.2); }
+            to { text-shadow: 0 0 20px rgba(99, 102, 241, 0.6); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- BACKGROUND KELOMPOK ANIMASI --- */
+        .hero-bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            /* GANTI URL DI BAWAH dengan foto kelompok atau ilustrasi tech kalian */
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                        url('bg.png');
+            background-size: cover;
+            background-position: center;
+            filter: saturate(1.2) contrast(1.1);
+            /* Efek animasi bergerak lambat pada background */
+            animation: bgZoomPan 20s ease-in-out infinite;
+        }
+
+        /* Efek Grid Digital Tambahan di atas gambar */
+        .tech-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        /* --- INTERFACE --- */
+        .navbar {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo { font-size: 1.6rem; font-weight: 800; color: #ffffff; letter-spacing: -0.05em; }
+        .nav-logo span { color: var(--primary); }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 2rem;
+            height: calc(100vh - 75px);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content { 
+            max-width: 650px; 
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(to right, #818cf8, #34d399);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .hero-content p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 2.5rem; }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+            transition: var(--transition);
+        }
+
+        .btn:hover { 
+            background: var(--primary-hover); 
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.03);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover { 
+            background: white; 
+            color: var(--dark-bg); 
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content { text-align: center; }
+            .hero-content h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-bg-wrapper">
+        <div class="hero-bg-image"></div>
+        <div class="tech-overlay"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">Circle<span>Tim.</span></div>
+        <a href="form_login.html" class="btn btn-outline">Sign In</a>
+    </nav>
+    
+    <div class="container">
+        <div class="hero-content">
+            <span class="tech-badge">Internal Platform v1.0</span>
+            <h1>The Next Gen <span>Workspace</span> For Our Team.</h1>
+            <p>Sistem manajemen proyek internal Kelompok 4. Dirancang khusus untuk memantau pengerjaan modul, integrasi sistem, dan produktivitas tim secara real-time.</p>
+            <a href="dashboard.html" class="btn">Masuk ke Dasbor</a>
+        </div>
+    </div>
+
+</body>
+</html>
