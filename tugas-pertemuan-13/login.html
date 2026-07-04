@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Ideas Enjong</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @keyframes bookEntrance {
+            0% {
+                opacity: 0;
+                transform: scale(0.95) rotate(-1deg) translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg) translateY(0);
+            }
+        }
+
+        @keyframes floatLogo {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(3deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @keyframes textWarmth {
+            0% { text-shadow: 0 0 0px rgba(245, 194, 0, 0); }
+            50% { text-shadow: 0 0 15px rgba(245, 194, 0, 0.3); }
+            100% { text-shadow: 0 0 0px rgba(245, 194, 0, 0); }
+        }
+
+        @keyframes honeyGlow {
+            0% { left: -150%; }
+            50% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        @keyframes contentFadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        :root {
+            --primary-red: #C8102E;
+            --accent-gold: #F5C200;
+            --warm-yellow: #FFE066;
+            --charcoal: #1A1A1A;
+            --white: #FFFFFF;
+            --gray-border: #D0C3B0; 
+            --font-primary: 'Poppins', sans-serif;
+            --font-accent: 'Dancing Script', cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--charcoal);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('image_959bd4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .book-container {
+            width: 100%;
+            max-width: 760px; 
+            background-color: #F4EAD4; 
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 0 40px rgba(0,0,0,0.1);
+            border: 8px solid #5C4033; 
+            display: grid;
+            grid-template-columns: 1fr; 
+            position: relative;
+            animation: bookEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .book-spine {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.15), rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.15));
+            z-index: 5;
+        }
+
+        .book-page {
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .page-left {
+            text-align: center;
+            border-bottom: 2px dashed rgba(0,0,0,0.1); 
+        }
+
+        .page-left h1 {
+            font-family: var(--font-accent);
+            color: var(--primary-red);
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            animation: textWarmth 4s ease-in-out infinite;
+        }
+
+        .page-left p {
+            font-size: 1rem;
+            color: #5C4033;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .page-right {
+            background-color: #F2E5CE;
+        }
+
+        .login-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: contentFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .login-logo {
+            width: 65px;
+            height: auto;
+            margin-bottom: 0.5rem;
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+
+        .login-header h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            letter-spacing: -0.5px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 290px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: #5C4033;
+            transition: color 0.3s ease;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            font-family: var(--font-primary);
+            font-size: 0.9rem;
+            border: 1px solid var(--gray-border);
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.6);
+            outline: none;
+            color: var(--charcoal);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-red);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .form-group input:focus + label {
+            color: var(--primary-red);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-login::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(245, 194, 0, 0.4), transparent);
+            animation: honeyGlow 4s infinite ease-in-out;
+        }
+
+        .btn-login:hover {
+            background-color: #A00D24;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.35);
+        }
+
+        .btn-login:active {
+            transform: translateY(-1px);
+        }
+
+        .back-to-home {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
+            color: #5C4033;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .back-to-home:hover {
+            color: var(--primary-red);
+            transform: translateX(-3px);
+        }
+
+        @media (min-width: 768px) {
+            .book-container {
+                grid-template-columns: 1fr 1fr; 
+                min-height: 480px;
+            }
+
+            .book-spine {
+                display: block; 
+            }
+
+            .page-left {
+                border-bottom: none;
+                border-right: 1px solid rgba(0,0,0,0.05); 
+                padding: 3rem;
+            }
+
+            .page-right {
+                padding: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book-container">
+        
+        <div class="book-spine"></div>
+        
+        <div class="book-page page-left">
+            <h1>Cita Rasa<br>Nusantara</h1>
+            <p>Authentically Banyuwangi</p>
+        </div>
+
+        <div class="book-page page-right">
+            <div class="login-container">
+                
+                <div class="/login-header">
+                    <!-- <img src="logo_login.png" alt="Logo Ideas Enjong" class="login-logo"> -->
+                    <h2>Selamat Datang</h2>
+                </div>
+
+                <form action="Katalog.html" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Kata Sandi</label>
+                        <input type="password" id="password" name="password" placeholder="Kata sandi Anda" required>
+                    </div>
+
+                    <button type="submit" class="btn-login">Masuk</button>
+                </form>
+
+                <a href="index.html" class="back-to-home">&larr; Kembali ke Beranda</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Resmi Ideas Enjong - Oleh-oleh Khas Banyuwangi</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        /* --- RESET & ROOT BRAND COLORS  --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-primary-red: #C8102E;   /* Enjong Red */
+            --brand-gold-accent: #F5C200;   /* Enjong Gold */
+            --brand-warm-yellow: #FFE066;   /* Warm Yellow */
+            --brand-dark-charcoal: #1A1A1A; /* Charcoal untuk Teks */
+            --brand-light-bg: #FFFFFF;      /* White untuk Latar Belakang */
+            --card-shadow: rgba(200, 16, 46, 0.08);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F9F9F9;
+            color: var(--brand-dark-charcoal);
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            background-color: var(--brand-light-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-emblem {
+            background-color: var(--brand-primary-red);
+            border: 2px solid var(--brand-gold-accent);
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 50px; 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-subtext {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .logo-maintext {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .brand-titles h1 {
+            font-size: 1.3rem;
+            color: var(--brand-primary-red);
+            font-weight: 700;
+        }
+
+        .brand-titles .tagline {
+            font-size: 0.75rem;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--brand-dark-charcoal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--brand-primary-red);
+        }
+
+        /* --- HERO SPLIT LAYOUT (Sesuai Sketsa Tengah) --- */
+        .hero-split-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-left-text {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hero-left-text h2 {
+            font-size: 2.5rem;
+            color: var(--brand-primary-red);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-left-text p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .btn-beli-sekarang {
+            display: inline-block;
+            align-self: flex-start;
+            background-color: var(--brand-primary-red);
+            color: white;
+            text-decoration: none;
+            padding: 12px 35px;
+            border-radius: 50px; 
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(200, 16, 46, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-beli-sekarang:hover {
+            background-color: #900014;
+            transform: scale(1.05);
+        }
+
+        .hero-right-photo img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* --- TAB NAVIGASI / FILTER KATEGORI (Kapsul Oval Menyilang) --- */
+        .tabs-category-container {
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tab-pill {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 2px solid var(--brand-primary-red);
+            border-radius: 50px; 
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--brand-primary-red);
+            transition: all 0.25s ease;
+            font-size: 0.95rem;
+        }
+
+        .tab-pill.active, .tab-pill:hover {
+            background-color: var(--brand-primary-red);
+            color: white;
+        }
+
+        /* --- LAYOUT UTAMA & GRID SISTEM --- */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .category-block {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            margin-bottom: 25px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #EAEDED;
+        }
+
+        .category-header h2 {
+            color: var(--brand-dark-charcoal);
+            font-size: 1.6rem;
+            font-weight: 600;
+            border-left: 5px solid var(--brand-primary-red);
+            padding-left: 12px;
+        }
+
+        /* Grid Utama Desktop */
+        .product-grid-featured {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- KARTU PRODUK & AKSEN BINTANG KANAN ATAS --- */
+        .product-card {
+            background-color: var(--brand-light-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px var(--card-shadow);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .star-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--brand-gold-accent);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .product-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--brand-dark-charcoal);
+            margin-bottom: 6px;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--brand-primary-red);
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER MAPS --- */
+        footer {
+            background-color: var(--brand-dark-charcoal);
+            color: #FFFFFF;
+            padding: 50px 20px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-info {
+            flex: 1.2;
+            min-width: 280px;
+        }
+
+        .footer-info h3, .footer-maps h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--brand-gold-accent);
+            font-weight: 600;
+        }
+
+        .footer-info p {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #CCCCCC;
+        }
+
+        .footer-maps {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .maps-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn-maps {
+            display: inline-block;
+            background-color: var(--brand-primary-red);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #2C3E50;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* ================= MEDIA QUERY RESPONSIVE HP / MOBILE ================= */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                justify-content: center;
+            }
+            .hero-split-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .btn-beli-sekarang {
+                align-self: center;
+            }
+            
+            /* Grid Menjadi 2 Produk di HP */
+            .product-grid-featured {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .product-card img {
+                height: 140px; /* Menyesuaikan tinggi gambar agar pas di layar HP */
+            }
+            .product-info {
+                padding: 10px;
+            }
+            .product-info h3 {
+                font-size: 0.85rem;
+            }
+            .price {
+                font-size: 0.95rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR NAVIGASI -->
+    <header>
+        <div class="header-container">
+            <div class="logo-brand">
+                <div class="logo-emblem">
+                    <span class="logo-subtext">Ideas</span>
+                    <span class="logo-maintext">Enjong</span>
+                </div>
+                <div class="brand-titles">
+                    <h1>Ideas Enjong</h1>
+                    <p class="tagline">Oleh-oleh Khas Banyuwangi</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#produk-unggulan">Produk</a></li>
+                    <li><a href="#kontak">Info</a></li>
+                    <li><a href="#kontak">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SPLIT LAYOUT -->
+    <section class="hero-split-container">
+        <div class="hero-left-text">
+            <h2>Kehangatan Tradisi Lokal<br>dalam setiap Gigitan</h2>
+            <p>Menghadirkan cita rasa tradisi lokal terbaik khas Bumi Blambangan langsung ke genggaman Anda.</p>
+            <a href="#produk-unggulan" class="btn-beli-sekarang">Beli Sekarang</a>
+        </div>
+        <div class="hero-right-photo">
+            <img src="Gemini_Generated_Image_fyr68pfyr68pfyr6.png" alt="Foto Produk Utama Ideas Enjong">
+        </div>
+    </section>
+
+    <!-- TAB NAVIGASI / PILTER KATEGORI -->
+    <div class="tabs-category-container">
+        <a href="#produk-unggulan" class="tab-pill active">Produk Unggulan</a>
+        <a href="#semua" class="tab-pill">Semua</a>
+        <a href="#keripik" class="tab-pill">Keripik</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        
+        <!-- ================= KATEGORI 1: 3 PRODUK UNGGULAN PERTAMA (Aksen Bintang) ================= -->
+        <section id="produk-unggulan" class="category-block">
+            <div class="category-header">
+                <h2>Produk Unggulan</h2>
+            </div>
+            <div class="product-grid-featured">
+                <!-- Produk 1 -->
+                <div class="product-card">
+                    <div class="star-badge">★</div>
+                    <img src="IMG_4734.JPG.jpeg" alt="Bagiak Kuncung">
+                    <div class="product-info"><h3>Bagiak Asli Susu Sapi</h3><p class="price">Rp 35.000</p></div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="product-card">
+                    <div class="star-badge">★</div>
+                    <img src="https://via.placeholder.com/300x220" alt="Kopi Gombengsari">
+                    <div class="product-info"><h3>Kopi Gombengsari Robusta</h3><p class="price">Rp 65.000</p></div>
+                </div>
+                <!-- Produk 3 -->
+                <div class="product-card">
+                    <div class="star-badge">★</div>
+                    <img src="https://via.placeholder.com/300x220" alt="Sale Pisang Crispy">
+                    <div class="product-info"><h3>Sale Pisang Ambon Crispy</h3><p class="price">Rp 28.000</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= KATEGORI 2: KERIPIK (4 PRODUK) ================= -->
+        <section id="keripik" class="category-block">
+            <div class="category-header">
+                <h2>Varian Keripik Renyah</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m7j2w29vvs3q58.webp" alt="Keripik Pisang Hitam 500gr">
+                    <div class="product-info"><h3>Keripik Pisang Hitam 500gr</h3><p class="price">Rp 39.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk8-m8a8qsv3pcdp4b.webp" alt="Keripik Pisang Hitam 200gr">
+                    <div class="product-info"><h3>Keripik Pisang Hitam 200gr</h3><p class="price">Rp 16.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m8a8qsv3s5il04.webp" alt="Keripik Pisang Margarin 200gr">
+                    <div class="product-info"><h3>Keripik Pisang Margarin 200gr</h3><p class="price">Rp 16.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk8-m7j2w29vx6o650.webp" alt="Keripik Pisang Margarin 500gr">
+                    <div class="product-info"><h3>Keripik Pisang Margarin 500gr</h3><p class="price">Rp 39.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m8a8qsv3uynhf1.webp" alt="Keripik Talas 150gr">
+                    <div class="product-info"><h3>Keripik Talas 150gr</h3><p class="price">Rp 14.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-81ztj-mdzgg8i3v28002.webp" alt="Keripik Gadung 100gr">
+                    <div class="product-info"><h3>Keripik Gadung 100gr</h3><p class="price">Rp 14.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m8a8qsv3tk3198.webp" alt="Keripik Singkong Sambel Terasi 100gr">
+                    <div class="product-info"><h3>Keripik Singkong Sambel Terasi 100gr</h3><p class="price">Rp 14.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk4-m8a8qsv3nxt918.webp" alt="Keripik Sale Pisang Berlin 225gr">
+                    <div class="product-info"><h3>Keripik Sale Pisang Berlin 225gr</h3><p class="price">Rp 20.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk4-m7kj4ztd765ocb.webp" alt="Keripik Usus 1kg">
+                    <div class="product-info"><h3>Keripik Usus 1kg</h3><p class="price">Rp 14.950</p></div>
+                </div>
+                <div class="product-card">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkc-m8a8qsv3wd7x59.webp" alt="Keripik Ladrang 150gr">
+                    <div class="product-info"><h3>Keripik Ladrang 150gr</h3><p class="price">Rp 18.950</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= KATEGORI 3: SEMUA (36 PRODUK LENGKAP) ================= -->
+        <section id="semua" class="category-block">
+            <div class="category-header">
+                <h2>Semua Produk (36 Varian Lengkap)</h2>
+            </div>
+            <div class="product-grid">
+                <!-- 1-10 -->
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkd-m7hq2oizg4ym61.webp"><div class="product-info"><h3>Bagiak 200gr</h3><p class="price">Rp 22.950</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m7j2w29vudja0f.webp"><div class="product-info"><h3>Bagiak 500gr</h3><p class="price">Rp 42.950</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m8eiokovyzq66b.webp"><div class="product-info"><h3>Bagiak Mika 20 pcs</h3><p class="price">Rp 16.950</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-8224p-mkxchwls56gx19.webp"><div class="product-info"><h3>Bagiak 1kg</h3><p class="price">Rp 83.950</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk4-m7j2w29vzzt23a.webp"><div class="product-info"><h3>Bagiak 350gr</h3><p class="price">Rp 32.950</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk8-m8a8qsv3pcdp4b.webp"><div class="product-info"><h3>Keripik Pisang Hitam 200gr</h3><p class="price">Rp 16.950</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkc-m8a8qsv3wd7x59.webp"><div class="product-info"><h3>Bagiak Spesial Jahe</h3><p class="price">Rp 32.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk4-m7kj4ztd765ocb.webp"><div class="product-info"><h3>Bagiak Manis Pandan</h3><p class="price">Rp 32.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk4-m8a8qsv3nxt918.webp"><div class="product-info"><h3>Sale Pisang Gulung</h3><p class="price">Rp 25.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-81ztj-mdzgg8i3v28002.webp"><div class="product-info"><h3>Keripik Singkong Pedas Manis</h3><p class="price">Rp 18.000</p></div></div>
+                <!-- 11-20 -->
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m8a8qsv3uynhf1.webp"><div class="product-info"><h3>Keripik Talas Gurih</h3><p class="price">Rp 20.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m7j2w29vvs3q58.webp"><div class="product-info"><h3>Ladrang Sari Sabrang</h3><p class="price">Rp 22.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk3-m7hq2oizkcny7d.webp"><div class="product-info"><h3>Pia Janger Asli</h3><p class="price">Rp 40.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk3-m7hq2oizkcny7d.webp"><div class="product-info"><h3>Kue Bolu Kuwuk</h3><p class="price">Rp 24.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-81ztj-mdzgg8i3xvcw06.webp"><div class="product-info"><h3>Manisan Cereme Kemasan</h3><p class="price">Rp 15.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk8-m7j2w29vx6o650.webp"><div class="product-info"><h3>Manisan Pala Segar</h3><p class="price">Rp 18.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m8a8qsv3s5il04.webp"><div class="product-info"><h3>Keripik Gedang Sale</h3><p class="price">Rp 26.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m8a8qsv3tk3198.webp"><div class="product-info"><h3>Rengginang Mini Balado</h3><p class="price">Rp 22.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk4-m7j2w29vzzt23a.webp"><div class="product-info"><h3>Kopi Arabika Kalibaru</h3><p class="price">Rp 80.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk6-m7lx79sui5ihd6.webp"><div class="product-info"><h3>Kopi Luwak Liar Asli</h3><p class="price">Rp 250.000</p></div></div>
+                <!-- 21-30 -->
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m7ujd1bxdwdz53.webp"><div class="product-info"><h3>Sirup Pala Otentik</h3><p class="price">Rp 35.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m7ujd1bxfayfbe.webp"><div class="product-info"><h3>Wedang Secang Celup</h3><p class="price">Rp 20.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m7ujd1bxi43bdd.webp"><div class="product-info"><h3>Teh Herbal Daun Kelor</h3><p class="price">Rp 25.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkc-m7lx79sujk2x91.webp"><div class="product-info"><h3>Kopi House Blend Enjong</h3><p class="price">Rp 55.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbke-m7kj4ztd8kq43c.webp"><div class="product-info"><h3>Kopi Luwak Premium Blend</h3><p class="price">Rp 140.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkc-m7lx79sub4o9d5.webp"><div class="product-info"><h3>Cokelat Bubuk Glenmore</h3><p class="price">Rp 45.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk2-m7lx79sukyndaf.webp"><div class="product-info"><h3>Teh Wangi Melati Lokal</h3><p class="price">Rp 15.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk8-m7lx79sucj8pa9.webp"><div class="product-info"><h3>Wedang Uwuh Komplit</h3><p class="price">Rp 28.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m7kj4ztd4d0s6b.webp"><div class="product-info"><h3>Kopi Robusta Classic</h3><p class="price">Rp 40.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m7ujd1bxjinree.webp"><div class="product-info"><h3>Kaos Khas Blambangan</h3><p class="price">Rp 85.000</p></div></div>
+                <!-- 31-36 -->
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk3-m7ujd1bxmbsn9c.webp"><div class="product-info"><h3>Udeng Khas Banyuwangi</h3><p class="price">Rp 50.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk2-m7m2lgji4mys39.webp"><div class="product-info"><h3>Gantungan Kunci Gandrung</h3><p class="price">Rp 10.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkd-m7lx79sufcdl76.webp"><div class="product-info"><h3>Miniatur Kerajinan Bambu</h3><p class="price">Rp 65.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk1-m7lx79sugqy1c1.webp"><div class="product-info"><h3>Tas Anyaman Pandan Alam</h3><p class="price">Rp 95.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk1-m7m2lgji7g3ob0.webp"><div class="product-info"><h3>Keripik Sukun Original</h3><p class="price">Rp 22.000</p></div></div>
+                <div class="product-card"><img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk1-m7ujd1bxkx8799.webp"><div class="product-info"><h3>Songkok Motif Gajah Oling</h3><p class="price">Rp 75.000</p></div></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER UTAMA -->
+    <footer>
+        <div class="footer-container" id="kontak">
+            <div class="footer-info">
+                <h3>Hubungi Outlet Kami</h3>
+                <p>📍 <strong>Alamat:</strong> M5PX+57H, Jl. Sultan Agung, Dusun Tojo Lor, Temuguruh, Kec. Sempu, Kabupaten Banyuwangi, Jawa Timur 68468</p>
+                <p>🕒 <strong>Jam Operasional:</strong> Open 24 hours</p>
+                <p>📧 <strong>Email Resmi:</strong> info@enjong.com</p>
+                <p>📞 <strong>WhatsApp:</strong> 0823-5937-3752</p>
+            </div>
+            
+            <div class="footer-maps">
+                <h3>Peta Lokasi Resmi</h3>
+                <div class="maps-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3947.669601444391!2d114.1804368!3d-8.3355604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMjAnMDguMCJTIExxNMKwMTAnNDkuNiJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <a href="https://maps.app.goo.gl/5xUvzuck2jmre1Kr8" target="_blank" class="btn-maps">Petunjuk Arah Google Maps ↗</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ideas Enjong. Hak Cipta Dilindungi Sesuai Dokumen Brand Identity Manual.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
