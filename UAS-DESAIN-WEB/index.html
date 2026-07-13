@@ -16,13 +16,20 @@
 
     <!-- HEADER & NAVIGATION -->
     <header class="sticky top-0 z-50 bg-red-700 text-amber-50 shadow-md">
-        <nav class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <a href="#" class="text-2xl font-bold tracking-wider text-amber-300">GEPREK MBOK DEWOR</a>
-            <ul class="flex space-x-6 text-sm font-medium items-center">
-                <li><a href="#home" class="hover:text-amber-200 transition">Beranda</a></li>
-                <li><a href="#menu" class="hover:text-amber-200 transition">Daftar Menu</a></li>
-                <li><a href="#informasi" class="hover:text-amber-200 transition">Lokasi & Jam</a></li>
-                <li><a href="login.html" class="bg-amber-400 hover:bg-amber-500 text-red-900 px-4 py-2 rounded-full font-bold transition">Masuk Admin</a></li>
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center gap-4">
+            <a href="#" class="text-xl sm:text-2xl font-black tracking-wider text-amber-300 whitespace-nowrap">
+                GEPREK MBOK DEWOR
+            </a>
+            
+            <ul class="flex flex-1 justify-between sm:justify-end items-center max-w-xs sm:max-w-none space-x-2 sm:space-x-6 text-xs sm:text-sm font-semibold ml-2">
+                <li><a href="#home" class="hover:text-amber-200 transition whitespace-nowrap">Beranda</a></li>
+                <li><a href="#menu" class="hover:text-amber-200 transition whitespace-nowrap">Menu</a></li>
+                <li><a href="#informasi" class="hover:text-amber-200 transition whitespace-nowrap">Lokasi</a></li>
+                <li class="shrink-0">
+                    <a href="login.html" class="inline-block bg-amber-400 hover:bg-amber-500 text-red-900 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold text-[10px] sm:text-xs tracking-wide transition shadow-sm whitespace-nowrap">
+                        Masuk Admin
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
