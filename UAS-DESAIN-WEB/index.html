@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geprek Mbok Dewor - Kuliner Pedas Banyuwangi</title>
-    <!-- Menggunakan Script Engine Tailwind CSS v4 -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        /* Konfigurasi Tema Warna Menggunakan Aturan Tailwind v4 */
-        @theme {
-            --color-orange-50: #fff7ed;
-            --color-stone-800: #292524;
-            --color-stone-900: #1c1917;
-            --color-red-700: #b91c1c;
-            --color-red-900: #7f1d1d;
-            --color-red-950: #450a0a;
-            --color-amber-50: #fffbf0;
-            --color-amber-200: #fde68a;
-            --color-amber-300: #fcd34d;
-            --color-amber-400: #fbbf24;
-            --color-amber-500: #f59e0b;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Konfigurasi warna kustom yang aman untuk Tailwind v3
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orange: {
+                50: '#fff7ed',
+              },
+              red: {
+                700: '#b91c1c',
+                900: '#7f1d1d',
+                950: '#450a0a',
+              },
+              amber: {
+                50: '#fffbf0',
+                200: '#fde68a',
+                300: '#fcd34d',
+                400: '#fbbf24',
+                505: '#f59e0b',
+              }
+            }
+          }
         }
-
+      }
+    </script>
+    <style>
         html {
             scroll-behavior: smooth;
         }
@@ -29,7 +39,6 @@
 </head>
 <body class="bg-orange-50 text-stone-800 font-sans antialiased">
 
-    <!-- HEADER & NAVIGATION -->
     <header class="sticky top-0 z-50 bg-red-700 text-amber-50 shadow-md w-full">
         <nav class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-3">
             <a href="#" class="text-xl sm:text-2xl font-black tracking-wider text-amber-300 whitespace-nowrap text-center md:text-left">
@@ -49,13 +58,12 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
         <section id="home" class="container mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center gap-12">
             <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
                 <span class="text-red-600 font-semibold tracking-widest uppercase text-sm">Kuliner Khas Banyuwangi</span>
                 <h1 class="text-4xl md:text-5xl font-black text-stone-900 leading-tight">Kelezatan Ayam Geprek Asli yang Bikin Nagih!</h1>
                 <p class="text-stone-600 text-lg">Sajian aneka nasi dan ayam geprek dengan pilihan sambal otentik, pas dinikmati bersama keluarga tercinta dengan harga yang sangat terjangkau.</p>
-                <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4 text-xs font-semibold text-red-700">
+                <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4 text-xs font-semibold text-red-750">
                     <span class="bg-red-100 px-3 py-1.5 rounded-full">✓ Bisa Dikirim</span>
                     <span class="bg-red-100 px-3 py-1.5 rounded-full">✓ Ambil Di Tempat</span>
                 </div>
@@ -65,7 +73,6 @@
             </div>
         </section>
 
-        <!-- MENU SECTION -->
         <section id="menu" class="bg-stone-900 text-amber-50 py-16">
             <div class="container mx-auto px-4">
                 <div class="text-center max-w-xl mx-auto mb-12">
@@ -75,35 +82,45 @@
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <article class="bg-stone-800 rounded-xl overflow-hidden border border-stone-700 p-5 flex gap-4 items-center">
-                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400"><img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/83a62bfc-2377-449d-8b79-a7df2ba0cc17_Go-Biz_20220915_133039.jpeg?w=50" alt=""></div>
+                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400 overflow-hidden">
+                            <img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/83a62bfc-2377-449d-8b79-a7df2ba0cc17_Go-Biz_20220915_133039.jpeg?w=80" alt="Ayam Geprek Sambal Ijo" class="w-full h-full object-cover">
+                        </div>
                         <div class="flex-1">
                             <h3 class="font-bold text-base text-white">Ayam Geprek Sambal Ijo Nasi</h3>
                             <p class="text-amber-400 font-bold text-sm mt-1">Rp 20.850</p>
                         </div>
                     </article>
                     <article class="bg-stone-800 rounded-xl overflow-hidden border border-stone-700 p-5 flex gap-4 items-center">
-                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400"><img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/c29426d6-f6b2-4b87-b08a-c8ece7136aee_Go-Biz_20220915_133639.jpeg?w=50" alt=""></div>
+                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400 overflow-hidden">
+                            <img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/c29426d6-f6b2-4b87-b08a-c8ece7136aee_Go-Biz_20220915_133639.jpeg?w=80" alt="Ayam Geprek Sambal Merah" class="w-full h-full object-cover">
+                        </div>
                         <div class="flex-1">
                             <h3 class="font-bold text-base text-white">Ayam Geprek Sambal Merah Nasi</h3>
                             <p class="text-amber-400 font-bold text-sm mt-1">Rp 20.850</p>
                         </div>
                     </article>
                     <article class="bg-stone-800 rounded-xl overflow-hidden border border-stone-700 p-5 flex gap-4 items-center">
-                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400"><img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/d2046592-218b-40e2-9cf0-36df80d4bf8f_Go-Biz_20220915_134213.jpeg?w=50" alt=""></div>
+                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400 overflow-hidden">
+                            <img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/d2046592-218b-40e2-9cf0-36df80d4bf8f_Go-Biz_20220915_134213.jpeg?w=80" alt="Ayam Geprek Sambal Matah" class="w-full h-full object-cover">
+                        </div>
                         <div class="flex-1">
                             <h3 class="font-bold text-base text-white">Ayam Geprek Sambal Matah Nasi</h3>
                             <p class="text-amber-400 font-bold text-sm mt-1">Rp 20.850</p>
                         </div>
                     </article>
                     <article class="bg-stone-800 rounded-xl overflow-hidden border border-stone-700 p-5 flex gap-4 items-center">
-                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400"><img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/04e8fc8b-1ea5-4b14-bc09-ff0800d08d78_Go-Biz_20221101_111854.jpeg?w=50" alt=""></div>
+                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400 overflow-hidden">
+                            <img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/04e8fc8b-1ea5-4b14-bc09-ff0800d08d78_Go-Biz_20221101_111854.jpeg?w=80" alt="Lalapan Empal" class="w-full h-full object-cover">
+                        </div>
                         <div class="flex-1">
                             <h3 class="font-bold text-base text-white">Lalapan Empal Sapi Nasi</h3>
                             <p class="text-amber-400 font-bold text-sm mt-1">Rp 20.850</p>
                         </div>
                     </article>
                     <article class="bg-stone-800 rounded-xl overflow-hidden border border-stone-700 p-5 flex gap-4 items-center">
-                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400"><img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/57f145fd-4798-4cd7-9a7f-dcef23936a2d_Go-Biz_20230124_110345.jpeg?w=50" alt=""></div>
+                        <div class="w-20 h-20 bg-stone-700 rounded-lg shrink-0 flex items-center justify-center text-xs text-stone-400 overflow-hidden">
+                            <img src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/57f145fd-4798-4cd7-9a7f-dcef23936a2d_Go-Biz_20230124_110345.jpeg?w=80" alt="Mie Nyanyil" class="w-full h-full object-cover">
+                        </div>
                         <div class="flex-1">
                             <h3 class="font-bold text-base text-white">Mie Nyanyil (Level 0-3)</h3>
                             <p class="text-amber-400 font-bold text-sm mt-1">Rp 15.000</p>
@@ -113,7 +130,6 @@
             </div>
         </section>
 
-        <!-- INFO SECTION -->
         <section id="informasi" class="container mx-auto px-4 py-16">
             <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm space-y-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -139,7 +155,7 @@
                     <h3 class="text-lg font-bold text-stone-900 flex items-center gap-2">Denah Lokasi Rogojampi</h3>
                     <div class="w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-inner border border-stone-200">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.0673322194605!2d114.2936306!3d-8.3457197!2m3!1f0!2f0!3f0!3m2!1i1026!2i768!4f13.1!3m3!1m2!1s0x2dd151745db7d297%3A0xe104f76cc89b53bd!2sJl.%20Ki%20Hajar%20Dewantara%2C%20Rogojampi%2C%20Kec.%20Rogojampi%2C%20Kabupaten%20Banyuwangi%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1720800000000!5m2!1sid!2sid" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.125959604313!2d114.2831034!3d-8.3151596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd1591f8615bdf1%3sGeprek%20Mbok%20Dewor!5e0!3m2!1sid!2sid!4v1700000000000" 
                             class="w-full h-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
@@ -148,9 +164,8 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="bg-red-950 text-red-200/70 py-6 text-center text-xs">
-        <p class="font-bold text-amber-400 mb-1">Geprek Mbok Dewor &copy; 2026</p>
+        <p class="font-bold text-amber-400 mb-1">Geprek Mbok Dewor © 2026</p>
         <p>UAS Desain Web - STIKOM PGRI Banyuwangi</p>
     </footer>
 
